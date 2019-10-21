@@ -15,21 +15,41 @@ public class JobApplicationTests {
 
 	@Autowired
 	private CandidateRepository candidateRepository;
-	
+
 	@Test
 	public void contextLoads() {
 	}
-	
+
 	@Test
 	public void insertCandidate() {
 		Candidate firstCandidate = new Candidate();
-		firstCandidate.setFirstName("Vili");
+		firstCandidate.setFirstName("Ionathan");
 		firstCandidate.setLastName("Ardelean");
-		firstCandidate.setPhone(135498);
-		
+		firstCandidate.setPhone("0758365094");
 		candidateRepository.save(firstCandidate);
-		
-	}
-	
+		System.out.println();
 
+	}
+
+	@Test
+
+	public void testFindCandidateById() {
+		Candidate candidate = candidateRepository.findById(1).orElse(null);
+		System.out.println(candidate);
+
+	}
+
+	@Test
+	public void testUpdateCandidate() {
+		Candidate candidate = candidateRepository.findById(1).orElse(null);
+		candidate.setEmail("ionathan_ar@yahoo.com");
+		candidateRepository.save(candidate);
+		System.out.println(candidate);
+
+	}
+
+//	@Test
+//	public void testDeteleteCandidate() { 
+//		candidateRepository.deleteById(1);
+//	}
 }
