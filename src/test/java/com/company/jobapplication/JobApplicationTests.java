@@ -39,14 +39,14 @@ public class JobApplicationTests {
 
 	}
 
-	@Test
-	public void testUpdateCandidate() {
-		Candidate candidate = candidateRepository.findById(1).orElse(null);
-		candidate.setEmail("ionathan_ar@yahoo.com");
-		candidateRepository.save(candidate);
-		System.out.println(candidate);
-
-	}
+	/*
+	 * @Test public void testUpdateCandidate() { Candidate candidate =
+	 * candidateRepository.findById(1).orElse(null);
+	 * candidate.setEmail("ionathan_ar@yahoo.com");
+	 * candidateRepository.save(candidate); System.out.println(candidate);
+	 * 
+	 * }
+	 */
 
 //	@Test
 //	public void testDeteleteCandidate() { 

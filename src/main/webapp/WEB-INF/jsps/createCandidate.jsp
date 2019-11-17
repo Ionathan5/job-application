@@ -10,12 +10,18 @@
 
 	<form action="saveCand" method="post">
 		<pre>
-First Name: <input type="text" name="firstName" />
-Last Name: <input type="text" name="lastName" />
-Email: <input type="text" name="email" />
-Phone: <input type="text" name="phone" />
-Position: <input type="text" name="jobTitle" />
-Start Date <input type="text" name="startDate" />
+First Name:    <input type="text" name="firstName" />
+<br/>
+Last Name:     <input type="text" name="lastName" />
+<br/>
+Email:         <input type="text" name="email" />
+<br/>
+Phone:         <input type="text" name="phone" />
+<br/>
+Position:      <input type="text" name="jobTitle" />
+<br/>
+Start Date     <input type="text" name="startDate" />
+<br/>
 <input type="submit" value="save" />
 </pre>
 	</form>

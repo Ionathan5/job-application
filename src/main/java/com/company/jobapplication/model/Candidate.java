@@ -1,6 +1,6 @@
 package com.company.jobapplication.model;
 
-import java.time.LocalDate;
+import java.sql.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -30,7 +30,7 @@ public class Candidate {
 	private String jobTitle;
 
 	@Column(name = "start_date")
-	private LocalDate startDate;
+	private Date startDate;
 
 	public int getId() {
 		return id;
@@ -80,18 +80,12 @@ public class Candidate {
 		this.jobTitle = jobTitle;
 	}
 
-	public LocalDate getStartDate() {
+	public Date getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(LocalDate startDate) {
+	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
-	}
-
-	@Override
-	public String toString() {
-		return "Candidate [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", phone=" + phone + ", jobTitle=" + jobTitle + ", startDate=" + startDate + "]";
 	}
 
 	@Override

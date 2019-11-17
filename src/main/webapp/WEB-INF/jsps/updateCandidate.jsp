@@ -6,23 +6,30 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Apply</title>
+<title>Update</title>
 </head>
 <body>
 
 	<form action="updateCand" method="post">
 		<pre>
-Id: <input type="text" name="id" value="${candidate.id}" readonly />
+Id:         <input type="text" name="id" value="${candidate.id}" readonly/>
+<br/>
 First Name: <input type="text" name="firstName"
-				value="${candidate.firstName}" />
-Last Name: <input type="text" name="lastName"
+				value="${candidate.firstName}"/>
+				<br/>
+Last Name:  <input type="text" name="lastName"
 				value="${candidate.lastName}" />
-Email: <input type="text" name="email" value="${candidate.email}" />
-Phone: <input type="text" name="phone" value="${candidate.phone}" />
-Position: <input type="text" name="jobTitle"
-				value="${candidate.jobTitle}" />
-Start Date <input type="text" name="startDate"
+				<br/>
+Email:      <input type="text" name="email" value="${candidate.email}" />
+<br/>
+Phone:      <input type="text" name="phone" value="${candidate.phone}" />
+<br/>
+Position:   <input type="text" name="jobTitle"
+				value="${candidate.jobTitle}"/>
+				<br/>
+Start Date  <input type="text" name="startDate"
 				value="${candidate.startDate}" />
+				<br/>
 <input type="submit" value="save" value="$-{}" />
 </pre>
 	</form>
