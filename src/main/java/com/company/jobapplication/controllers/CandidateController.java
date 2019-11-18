@@ -8,6 +8,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.company.jobapplication.util.EmailUtil;
 import com.company.jobapplication.model.Candidate;
 import com.company.jobapplication.repos.CandidateRepository;
 import com.company.jobapplication.service.CandidateService;
@@ -17,8 +19,12 @@ public class CandidateController {
 
 	@Autowired
 	CandidateService service;
+
 	@Autowired
 	CandidateRepository repository;
+
+	@Autowired
+	EmailUtil emailUtil;
 
 	@RequestMapping("/showCreate")
 	public String showCreate() {
@@ -30,6 +36,9 @@ public class CandidateController {
 		Candidate candidateSaved = service.saveCandidate(candidate);
 		String msg = "Candidate was saved with id:" + candidateSaved.getId();
 		modelMap.addAttribute("msg", msg);
+		emailUtil.sendEmail(candidate.getEmail(), "Thank you for your application",
+				"Hi " + (candidate.getFirstName() + " ,\r\n" + "\r\n" + "Thank you for applying to the "
+						+ (candidate.getJobTitle()) + " position at Random SRL."));
 		return "createCandidate";
 	}
 
