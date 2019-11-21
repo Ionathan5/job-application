@@ -1,6 +1,5 @@
 package com.company.jobapplication.controllers;
 
-import java.text.SimpleDateFormat;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,10 +8,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.company.jobapplication.util.EmailUtil;
 import com.company.jobapplication.model.Candidate;
-import com.company.jobapplication.repos.CandidateRepository;
 import com.company.jobapplication.service.CandidateService;
+import com.company.jobapplication.service.EmailService;
 
 @Controller
 public class CandidateController {
@@ -21,10 +19,7 @@ public class CandidateController {
 	CandidateService service;
 
 	@Autowired
-	CandidateRepository repository;
-
-	@Autowired
-	EmailUtil emailUtil;
+	EmailService emailService;
 
 	@RequestMapping("/showCreate")
 	public String showCreate() {
@@ -36,9 +31,7 @@ public class CandidateController {
 		Candidate candidateSaved = service.saveCandidate(candidate);
 		String msg = "Candidate was saved with id:" + candidateSaved.getId();
 		modelMap.addAttribute("msg", msg);
-		emailUtil.sendEmail(candidate.getEmail(), "Thank you for your application",
-				"Hi " + (candidate.getFirstName() + " ,\r\n" + "\r\n" + "Thank you for applying to the "
-						+ (candidate.getJobTitle()) + " position at Random SRL."));
+		emailService.sendApplyConfirmationMail(candidate);
 		return "createCandidate";
 	}
 

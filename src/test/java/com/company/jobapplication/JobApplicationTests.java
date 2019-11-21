@@ -20,16 +20,16 @@ public class JobApplicationTests {
 	public void contextLoads() {
 	}
 
-	@Test
-	public void insertCandidate() {
-		Candidate firstCandidate = new Candidate();
-		firstCandidate.setFirstName("Ionathan");
-		firstCandidate.setLastName("Ardelean");
-		firstCandidate.setPhone("0758365094");
-		candidateRepository.save(firstCandidate);
-		System.out.println();
-
-	}
+//	@Test
+//	public void insertCandidate() {
+//		Candidate firstCandidate = new Candidate();
+//		firstCandidate.setFirstName("Ionathan");
+//		firstCandidate.setLastName("Ardelean");
+//		firstCandidate.setPhone("0758365094");
+//		candidateRepository.save(firstCandidate);
+//		System.out.println();
+//
+//	}
 
 	@Test
 
