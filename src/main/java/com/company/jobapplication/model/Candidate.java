@@ -1,12 +1,22 @@
 package com.company.jobapplication.model;
 
-import java.sql.Date;
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
+import com.company.jobapplication.validators.DateConstraint;
+import com.company.jobapplication.validators.PhoneNumberConstraint;
 
 @Entity
 @Table(name = "candidates")
@@ -17,20 +27,28 @@ public class Candidate {
 	private int id;
 
 	@Column(name = "first_name")
+	@Size(min=2, max=100)
 	private String firstName;
 
 	@Column(name = "last_name")
+	@Size(min=2, max=100)
 	private String lastName;
 
+	@Email
+	@NotEmpty
 	private String email;
 
+	@PhoneNumberConstraint
 	private String phone;
 
+	@NotEmpty
 	@Column(name = "job_title")
 	private String jobTitle;
-
+	
+    @DateTimeFormat(iso = ISO.DATE)
+	@DateConstraint
 	@Column(name = "start_date")
-	private Date startDate;
+	private LocalDate startDate;
 
 	public int getId() {
 		return id;
@@ -80,11 +98,11 @@ public class Candidate {
 		this.jobTitle = jobTitle;
 	}
 
-	public Date getStartDate() {
+	public LocalDate getStartDate() {
 		return startDate;
 	}
 
-	public void setStartDate(Date startDate) {
+	public void setStartDate(LocalDate startDate) {
 		this.startDate = startDate;
 	}
 
