@@ -14,7 +14,7 @@ public class PhoneNumberValidator implements ConstraintValidator<PhoneNumberCons
     ConstraintValidatorContext cxt) {
 	  String pattern = "(\\+)?([-\\._\\(\\) ]?[\\d]{3,20}[-\\._\\(\\) ]?){2,10}";
       return contactField != null && contactField.matches(pattern)
-        && (contactField.length() > 8) && (contactField.length() < 15);
+        && (contactField.length() > 8) && (contactField.length() < 17);
   }
 
 }

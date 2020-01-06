@@ -13,8 +13,9 @@ public class DateValidator implements ConstraintValidator<DateConstraint, LocalD
 
   @Override
   public boolean isValid(LocalDate date, ConstraintValidatorContext cxt) {
-      boolean valid = date !=null && date.getYear() == 2019;
-	  return valid;
+	  //TODO implement date validation
+      boolean fakeValid = date !=null && date.getYear() == 2019;
+	  return fakeValid;
   }
 
 }
