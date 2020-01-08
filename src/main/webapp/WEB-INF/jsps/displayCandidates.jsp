@@ -6,20 +6,25 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link href="webjars/bootstrap/4.4.1/css/bootstrap.min.css"
+	rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Candidates</title>
 </head>
 <body>
 
-	<h2>Candidates:</h2>
-	<table>
+	<h1 class="font-weight-bolder">Candidates:</h1>
+	<table class="table table-striped">
 		<tr>
 			<th>id</th>
 			<th>First Name</th>
 			<th>Last Name</th>
 			<th>E-mail</th>
 			<th>Phone</th>
-			<th>Position</th>
+			<th>Job title:</th>
+			<th>Date</th>
+			<th>Edit</th>
+			<th>Delete</th>
 		</tr>
 
 		<c:forEach items="${candidates}" var="candidate">

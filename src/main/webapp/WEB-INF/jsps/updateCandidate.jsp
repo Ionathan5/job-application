@@ -1,74 +1,59 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@page isELIgnored="false"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
+<link href="webjars/bootstrap/4.4.1/css/bootstrap.min.css"
+	rel="stylesheet">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Update</title>
 </head>
 <body>
-
-	<form:form action="updateCand" method="post" modelAttribute="candidate">
-		<table>
-			<tr>
-				<td>ID:</td>
-				<td><input type="text" name="id" value="${candidate.id}" readonly/>
-				<td />
-			<tr />
-
-			<tr>
-				<td>First Name:</td>
-				<td><form:input type="text" name="firstName"
-					value="${candidate.firstName}" path="firstName"/>
-				<td><form:errors path="firstName" />
-				<td />
-				<td />
-			<tr />
-			<tr>
-				<td>Last Name:</td>
-				<td><form:input type="text" name="lastName"
-					value="${candidate.lastName}" path="lastName"/>
-				<td><form:errors path="lastName" />
-				<td />
-				<td />
-			<tr />
-			<tr>
-				<td>Email:</td>
-				<td><form:input type="text" name="email" value="${candidate.email}" path="email"/>
-				<td><form:errors path="email" />
-				<td />
-				<td />
-			<tr />
-			<tr>
-				<td>Phone:</td>
-				<td><form:input type="text" name="phone" value="${candidate.phone}" path="phone" />
-				<td><form:errors path="phone" />
-				<td />
-				<td />
-			<tr />
-			<tr>
-				<td>Position:</td>
-				<td><form:input type="text" name="jobTitle"
+	<div class="container">
+		<div style="background: transparent !important" class="jumbotron">
+		<h1 class="font-weight-bolder">Candidate update</h1>
+			<form:form  class="form-group" action="updateCand" method="post"
+				modelAttribute="candidate">
+				<label for="id">ID:</label>
+				<input class="form-control" type="text" id="disabledInput" name="id" value="${candidate.id}" readonly />
+				<br />
+				<label for="firstName">First Name:</label>
+				<form:input class="form-control" type="text" name="firstName"
+					value="${candidate.firstName}" path="firstName" />
+				<form:errors class="text-danger" path="firstName" />
+				<br />
+				<label for="lastName">Last Name:</label>
+				<form:input class="form-control" type="text" name="lastName"
+					value="${candidate.lastName}" path="lastName" />
+				<form:errors class="text-danger" path="lastName" />
+				<br />
+				<label for="email">Email:</label>
+				<form:input class="form-control" type="text" name="email" value="${candidate.email}"
+					path="email" />
+				<form:errors class="text-danger" path="email" />
+				<br />
+				<label for="phone">Phone:</label>
+				<form:input class="form-control" type="text" name="phone" value="${candidate.phone}"
+					path="phone" />
+				<form:errors class="text-danger" path="phone" />
+				<br />
+				<label for="jobTitle">JobTitle:</label>
+				<form:input class="form-control" type="text" name="jobTitle"
 					value="${candidate.jobTitle}" path="jobTitle" />
-				<td><form:errors path="jobTitle" />
-				<td />
-				<td />
-			<tr />
-			<tr>
-				<td>Date:</td>
-				<td><form:input type="text" name="startDate"
-					value="${candidate.startDate}" path="startDate"/>
-				<td><form:errors path="startDate" />
-				<td />
-				<td />
-			<tr />
-			<tr>
-				<td><input type="submit" value="save" value="$-{}" />
-			<tr />
-		</table>
-	</form:form>
+				<form:errors class="text-danger" path="jobTitle" />
+				<br />
+				<label for="startDate">Start Date:</label>
+				<form:input class="form-control" type="date" id="example-date-input" name="startDate"
+					value="${candidate.startDate}" path="startDate" />
+				<form:errors class="text-danger" path="startDate" />
+				<br />
+				<input class="btn btn-primary" type="submit" value="save"
+					value="$-{}" />
+				<br />
+			</form:form>
+		</div>
+	</div>
 </body>
 </html>

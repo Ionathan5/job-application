@@ -13,7 +13,7 @@ public class DateValidator implements ConstraintValidator<DateConstraint, LocalD
 
   @Override
   public boolean isValid(LocalDate date, ConstraintValidatorContext cxt) {
-	  LocalDate lDate = date.now();
+	  LocalDate lDate = LocalDate.now();
 	  boolean valid = date !=null && date.isAfter(lDate);
 	  return valid;
   }

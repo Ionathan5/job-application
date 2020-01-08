@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
 @Target( {ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
 public @interface PhoneNumberConstraint {
-    String message() default "Please provide a valid phone number";
+    String message() default "please provide a valid phone number";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }
