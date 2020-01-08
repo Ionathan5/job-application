@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
 @Target( {ElementType.FIELD })
 @Retention(RetentionPolicy.RUNTIME)
 public @interface DateConstraint {
-    String message() default "Please provide a valid date in format YYYY-MM-DD";
+    String message() default "Please provide a valid date in format YYYY-MM-DD after today date";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

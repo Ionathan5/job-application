@@ -2,12 +2,15 @@ package com.company.jobapplication.controllers;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+
+import com.company.jobapplication.util.LocalDateConverter;
 
 @Configuration
 @EnableWebMvc
@@ -27,5 +30,10 @@ public class MvcConfiguration implements WebMvcConfigurer {
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry.addResourceHandler("/webjars/**").addResourceLocations("/webjars/");
 	}
-
+	
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+        registry.addConverter(new LocalDateConverter());
+    }
 }
+

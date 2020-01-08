@@ -31,13 +31,14 @@ public class JobApplicationTests {
 //
 //	}
 
-	@Test
-
-	public void testFindCandidateById() {
-		Candidate candidate = candidateRepository.findById(1).orElse(null);
-		System.out.println(candidate);
-
-	}
+	/*
+	 * @Test
+	 * 
+	 * public void testFindCandidateById() { Candidate candidate =
+	 * candidateRepository.findById(1).orElse(null); System.out.println(candidate);
+	 * 
+	 * }
+	 */
 
 	/*
 	 * @Test public void testUpdateCandidate() { Candidate candidate =

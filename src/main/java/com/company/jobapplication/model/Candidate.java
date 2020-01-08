@@ -11,10 +11,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
-
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
-
 import com.company.jobapplication.validators.DateConstraint;
 import com.company.jobapplication.validators.PhoneNumberConstraint;
 
