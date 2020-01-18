@@ -12,35 +12,38 @@
 <title>Candidates</title>
 </head>
 <body>
+	<div class="container">
+		<div style="background: transparent !important" class="jumbotron">
+			<h1 class="font-weight-bolder">Candidates:</h1>
+			<table class="table table-striped">
+				<tr>
+					<th>id</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>E-mail</th>
+					<th>Phone</th>
+					<th>Job title:</th>
+					<th>Date</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
 
-	<h1 class="font-weight-bolder">Candidates:</h1>
-	<table class="table table-striped">
-		<tr>
-			<th>id</th>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>E-mail</th>
-			<th>Phone</th>
-			<th>Job title:</th>
-			<th>Date</th>
-			<th>Edit</th>
-			<th>Delete</th>
-		</tr>
-
-		<c:forEach items="${candidates}" var="candidate">
-			<tr>
-				<td>${candidate.id}</td>
-				<td>${candidate.firstName}</td>
-				<td>${candidate.lastName}</td>
-				<td>${candidate.email}</td>
-				<td>${candidate.phone}</td>
-				<td>${candidate.jobTitle}</td>
-				<td>${candidate.startDate}</td>
-				<td><a href="deleteCandidate?id=${candidate.id}">delete</a></td>
-				<td><a href="showUpdate?id=${candidate.id}">edit</a></td>
-			</tr>
-		</c:forEach>
-	</table>
-	<a href="showCreate">Apply</a>
+				<c:forEach items="${candidates}" var="candidate">
+					<tr>
+						<td>${candidate.id}</td>
+						<td>${candidate.firstName}</td>
+						<td>${candidate.lastName}</td>
+						<td>${candidate.email}</td>
+						<td>${candidate.phone}</td>
+						<td>${candidate.jobTitle}</td>
+						<td>${candidate.startDate}</td>
+						<td><a href="deleteCandidate?id=${candidate.id}">delete</a></td>
+						<td><a href="showUpdate?id=${candidate.id}">edit</a></td>
+					</tr>
+				</c:forEach>
+			</table>
+			<a href="showCreate">Apply</a>
+		</div>
+	</div>
 </body>
 </html>
